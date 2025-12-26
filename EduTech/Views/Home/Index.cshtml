@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+    <div class="lg:col-span-3 space-y-12">
+
+        <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl text-center lg:text-left h-80 flex items-center">
+            <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center"></div>
+
+            <div class="relative z-10 p-10 text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Geleceğini Kodlamaya <br />Bugün Başla</h1>
+                <p class="text-lg text-gray-200 mb-8 max-w-lg">EduTech ile kariyer basamaklarını hızla tırman. Uzman eğitmenler, güncel içerikler.</p>
+                <a href="/Course/Index" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg transform hover:-translate-y-1">
+                    Kursları Keşfet
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-fire text-orange-500"></i> Popüler Alanlar
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/Course/Index?categoryId=1" class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center hover:shadow-lg hover:border-indigo-200 transition group">
+                    <div class="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-600 transition">
+                        <i class="fa-solid fa-code text-blue-600 group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700 group-hover:text-blue-600">Yazılım</h3>
+                </a>
+
+                <a href="/Course/Index?categoryId=2" class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center hover:shadow-lg hover:border-indigo-200 transition group">
+                    <div class="w-12 h-12 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-purple-600 transition">
+                        <i class="fa-solid fa-pen-nib text-purple-600 group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700 group-hover:text-purple-600">Tasarım</h3>
+                </a>
+
+                <a href="/Course/Index?categoryId=4" class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center hover:shadow-lg hover:border-indigo-200 transition group">
+                    <div class="w-12 h-12 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-green-600 transition">
+                        <i class="fa-solid fa-shield-halved text-green-600 group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700 group-hover:text-green-600">Güvenlik</h3>
+                </a>
+
+                <a href="/Course/Index?categoryId=5" class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center hover:shadow-lg hover:border-indigo-200 transition group">
+                    <div class="w-12 h-12 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-red-600 transition">
+                        <i class="fa-solid fa-mobile-screen text-red-600 group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700 group-hover:text-red-600">Mobil</h3>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-indigo-50 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Öğrencilerimiz Ne Diyor?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">A</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Ayşe Yılmaz</h4>
+                            <p class="text-xs text-gray-500">Yazılım Mühendisi</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">"Sıfırdan C# kursu sayesinde kariyerimi değiştirdim. Hocalar çok ilgili, içerikler çok güncel."</p>
+                    <div class="text-yellow-400 text-xs mt-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">M</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Mehmet Demir</h4>
+                            <p class="text-xs text-gray-500">Grafik Tasarımcı</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">"UI/UX tasarım dersleri harikaydı. Figma kullanmayı bu platform sayesinde profesyonelce öğrendim."</p>
+                    <div class="text-yellow-400 text-xs mt-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="lg:col-span-1">
+        @await Component.InvokeAsync("RecentCourses")
+
+        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 mt-6">
+            <h3 class="font-bold text-gray-800 text-lg mb-4 border-b pb-2">
+                <i class="fa-solid fa-envelope text-indigo-600"></i> Bültene Katıl
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">Yeni kurslardan ve indirimlerden haberdar olmak için e-bültene abone ol.</p>
+
+            <form action="/Home/Subscribe" method="post">
+                <input type="email" name="email" required placeholder="Email adresin..." class="w-full border rounded px-3 py-2 text-sm mb-2 focus:outline-indigo-500 border-gray-300">
+                <button type="submit" class="w-full bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold py-2 rounded transition">
+                    Abone Ol
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

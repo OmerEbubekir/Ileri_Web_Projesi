@@ -1,0 +1,47 @@
+﻿@model EduTech.Models.Course
+
+<div class="max-w-5xl mx-auto">
+
+    <div class="mb-6">
+        <a href="/Course/Index" class="text-gray-500 hover:text-indigo-600 text-sm mb-2 inline-block">&larr; Kurslara Dön</a>
+        <h1 class="text-4xl font-bold text-gray-900">@Model.Title</h1>
+        <a href="/Course/Index?categoryId=@Model.CategoryId" class="text-indigo-600 font-semibold mt-2 inline-block hover:underline">
+            @Model.Category.Name
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <div class="lg:col-span-2">
+            <img src="@Model.ImageUrl" alt="@Model.Title" class="w-full h-96 object-cover rounded-xl shadow-lg mb-8">
+
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Kurs Açıklaması</h3>
+                <p class="text-gray-700 leading-relaxed whitespace-pre-line">
+                    @Model.Description
+                </p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-1">
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 sticky top-6">
+                <span class="text-gray-500 text-sm font-bold uppercase tracking-wider">Kurs Ücreti</span>
+                <div class="text-4xl font-extrabold text-gray-900 mt-2 mb-6">@Model.Price.ToString("N0") ₺</div>
+
+                <form asp-action="Buy" asp-route-id="@Model.Id" method="post">
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-lg shadow transition mb-3">
+                        Hemen Satın Al
+                    </button>
+                </form>
+                <div class="mt-6 space-y-3 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-infinity text-indigo-500 w-5"></i> Ömür boyu erişim
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-indigo-500 w-5"></i> Bitirme sertifikası
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

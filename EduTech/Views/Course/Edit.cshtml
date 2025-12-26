@@ -1,0 +1,36 @@
+﻿@model EduTech.Models.Course
+
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Kursu Düzenle</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Kurs Başlığı</label>
+            <input asp-for="Title" class="w-full px-3 py-2 border rounded-lg" />
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Kategori</label>
+            <select asp-for="CategoryId" class="w-full px-3 py-2 border rounded-lg" asp-items="ViewBag.Categories"></select>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Fiyat</label>
+            <input asp-for="Price" type="text" class="w-full px-3 py-2 border rounded-lg" />
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Resim URL</label>
+            <input asp-for="ImageUrl" class="w-full px-3 py-2 border rounded-lg" />
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Açıklama</label>
+            <textarea asp-for="Description" rows="4" class="w-full px-3 py-2 border rounded-lg"></textarea>
+        </div>
+
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg">Güncelle</button>
+    </form>
+</div>

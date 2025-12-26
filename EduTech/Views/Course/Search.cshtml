@@ -1,0 +1,46 @@
+﻿@model List<EduTech.Models.Course>
+
+<div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-800">Arama Sonuçları</h2>
+
+    <p class="text-gray-600 mt-2">
+        "<span class="font-bold text-indigo-600">@ViewBag.SearchQuery</span>" için arama yaptınız.
+    </p>
+
+    @if (TempData["InfoMessage"] != null)
+    {
+        <div class="bg-blue-100 text-blue-800 p-2 rounded mt-2 inline-block text-sm">
+            <i class="fa-solid fa-info-circle"></i> @TempData["InfoMessage"]
+        </div>
+    }
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="text-center py-10 bg-white rounded-lg shadow">
+        <i class="fa-solid fa-face-frown text-4xl text-gray-400 mb-4"></i>
+        <p class="text-gray-500 text-lg">Maalesef aradığınız kriterlere uygun kurs bulunamadı.</p>
+        <a href="/Course/Index" class="text-indigo-600 font-bold hover:underline mt-2 inline-block">Tüm Kursları Gör</a>
+    </div>
+}
+else
+{
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach (var item in Model)
+        {
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <img src="@item.ImageUrl" alt="@item.Title" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">
+                        @item.Category.Name
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-gray-900">@item.Title</h3>
+                    <div class="mt-4 flex justify-between items-center border-t pt-4">
+                        <span class="text-2xl font-bold text-gray-900">@item.Price.ToString("N0") ₺</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900 font-semibold">İncele &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

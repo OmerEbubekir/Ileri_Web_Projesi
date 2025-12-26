@@ -1,0 +1,52 @@
+﻿@model List<EduTech.Models.Category>
+
+<div class="max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-3xl font-bold text-gray-800">Kategoriler</h2>
+
+        @if (Context.Session.GetString("Role") == "Admin")
+        {
+            <a href="/Category/Create" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow transition">
+                <i class="fa-solid fa-plus"></i> Yeni Kategori
+            </a>
+        }
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <table class="min-w-full leading-normal">
+            <thead>
+                <tr>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#ID</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Kategori Adı</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">@item.Id</td>
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm font-bold">@item.Name</td>
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm text-right">
+
+                            @if (Context.Session.GetString("Role") == "Admin")
+                            {
+                                <a href="/Category/Edit/@item.Id" class="text-yellow-500 hover:text-yellow-600 mx-2" title="Düzenle">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="/Category/Delete/@item.Id" onclick="return confirm('Bu kategoriyi silmek istediğine emin misin?')" class="text-red-500 hover:text-red-600 mx-2" title="Sil">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (Model.Count == 0)
+        {
+            <div class="p-5 text-center text-gray-500">Kategori bulunamadı.</div>
+        }
+    </div>
+</div>

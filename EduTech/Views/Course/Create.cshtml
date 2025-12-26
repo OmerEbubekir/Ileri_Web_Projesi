@@ -1,0 +1,49 @@
+﻿@model EduTech.Models.Course
+
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Yeni Kurs Oluştur</h2>
+
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+    {
+        <div asp-validation-summary="All" class="text-red-600 mb-4 bg-red-50 p-3 rounded border border-red-200"></div>
+    }
+    <form asp-action="Create" method="post">
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Kurs Başlığı</label>
+            <input asp-for="Title" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <span asp-validation-for="Title" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Kategori</label>
+            <select asp-for="CategoryId" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" asp-items="ViewBag.Categories">
+                <option value="">Seçiniz...</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Fiyat (₺)</label>
+            <input asp-for="Price" type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Örn: 150,50" />
+            <span asp-validation-for="Price" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Resim URL (Opsiyonel)</label>
+            <input asp-for="ImageUrl" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <span asp-validation-for="ImageUrl" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Açıklama</label>
+            <textarea asp-for="Description" rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            <span asp-validation-for="Description" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition">Kaydet</button>
+            <a href="/Course/Index" class="text-gray-600 hover:text-gray-800">İptal</a>
+        </div>
+    </form>
+</div>
