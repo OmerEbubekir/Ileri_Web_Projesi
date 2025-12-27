@@ -31,7 +31,7 @@ EduTech, öğrencilerin kursları keşfedebildiği, satın alabildiği ve yönet
 ### Kurs Detay
 ![Kurs Detay](screenshots/course-detail.png)
 
-> **Not:** Ekran görüntülerini `screenshots/` klasörüne ekleyerek yukarıdaki placeholder'ları gerçek görsellerle değiştirebilirsiniz.
+
 
 ## 🏗️ Proje Yapısı
 
